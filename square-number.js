@@ -2,13 +2,13 @@ var isSquare = function(number){
 
     const sqrtNumber = Math.sqrt(number)
 
-    var result = false
+    var answer = false
 
     if(Number.isInteger(sqrtNumber)){
-        result = true
+        answer = true
     }
 
-    return result
+    return answer
 }
 
 isSquare(25)
