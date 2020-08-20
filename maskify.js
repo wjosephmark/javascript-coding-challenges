@@ -1,25 +1,34 @@
 function maskify(cc) {
 
-    function reverseString(str) {
-        var newString = "";
-        for (var i = str.length - 1; i >= 0; i--) {
-            newString += str[i];
-        }
-        return newString;
+    const numberString = cc.toString()
+    
+    const numberLength = numberString.length
+    
+    const hiddenLength = numberLength-4
+
+    const numberSlice = numberString.slice(hiddenLength, numberLength) 
+    
+    const newNumber = []
+
+    const test = []
+
+    var i = 0
+    while( i < numberLength-4){
+        newNumber.push("#")
+        i += 1
     }
 
-    const backwards = reverseString(cc)
+    newNumber.push(numberSlice)
 
-    const lastFour = backwards.slice(0,4)
 
-    const hiddenLength = cc.length-4
+    const numberJoined = newNumber.join('')
 
-    console.log(lastFour)
-
-    return 
+    return(
+        numberJoined
+    )
 
 }
 
-const cardNumber =  "adfasdfasdfasdfasdfasdfasdf"
+const cardNumber =  12156184341153138
 
 maskify(cardNumber)
